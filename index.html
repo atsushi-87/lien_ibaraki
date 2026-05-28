@@ -27,17 +27,18 @@
                     },
                     colors: {
                         brand: {
-                            navy: '#050f21',
-                            navyDark: '#020710',
-                            gold: '#c59b27',
-                            goldDark: '#a3791a',
-                            goldLight: '#e6c875',
-                            cream: '#faf8f5',
+                            navy: '#050f21',      
+                            navyDark: '#020710',  
+                            gold: '#c59b27',      
+                            goldDark: '#a3791a',  
+                            goldLight: '#e6c875', 
+                            cream: '#faf8f5',     
                         }
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'spin-slow': 'spin 12s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         float: {
@@ -50,14 +51,10 @@
         }
     </script>
     <style>
-        /* Custom scrollbar */
+        /* Custom scrollbar in Navy and Gold */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #050f21; }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #c59b27, #a3791a);
-            border: 2px solid #050f21;
-            border-radius: 5px;
-        }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #c59b27, #a3791a); border: 2px solid #050f21; border-radius: 5px; }
         
         /* Gold metallic text effect */
         .gold-text-gradient {
@@ -68,11 +65,9 @@
             animation: shine 4s linear infinite;
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
+        @keyframes shine { to { background-position: 200% center; } }
 
-        /* Brush strokes */
+        /* Brush strokes matching Instagram style */
         .brush-top-right {
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M150,100 Q250,50 400,150 T500,50 L500,0 L150,0 Z' fill='%23050f21'/%3E%3C/svg%3E");
             background-size: contain;
@@ -100,7 +95,7 @@
 </head>
 <body class="bg-brand-cream text-brand-navy font-sans selection:bg-brand-navy selection:text-white overflow-x-hidden">
 
-    <!-- HEADER -->
+    <!-- HEADER (SPA Navigation) -->
     <header class="fixed top-0 left-0 w-full z-50 bg-brand-navy/95 backdrop-blur-md border-b-2 border-brand-gold/30 transition-all duration-300 shadow-2xl" id="main-header">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <button onclick="switchTab('home')" class="flex items-center space-x-3 group focus:outline-none">
@@ -157,9 +152,11 @@
             <div class="absolute bottom-0 left-0 w-80 h-80 opacity-20 pointer-events-none transform rotate-180 brush-top-right"></div>
 
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center text-center z-10 w-full">
-                <!-- Emblem -->
+                
+                <!-- Grand Emblem Arena (Clean Version) -->
                 <div class="mb-8 relative" data-aos="zoom-in" data-aos-duration="1200">
                     <div class="absolute inset-2 border-2 border-dashed border-brand-goldLight/40 rounded-full animate-spin-slow pointer-events-none"></div>
+                    
                     <div class="relative w-48 h-48 sm:w-56 sm:h-56 p-1 bg-gradient-to-b from-brand-gold via-brand-goldLight to-brand-goldDark rounded-full shadow-2xl flex items-center justify-center overflow-hidden bg-brand-navy animate-float">
                         <img src="logo.png" alt="FC LIEN IBARAKI Emblem" class="w-full h-full object-contain relative z-10" onerror="this.style.display='none'; document.getElementById('hero-fallback-main').classList.remove('hidden');">
                         <div id="hero-fallback-main" class="hidden text-brand-goldLight relative z-10 flex flex-col items-center">
@@ -184,7 +181,6 @@
                     <div class="w-16 h-[1px] bg-gradient-to-l from-transparent to-brand-gold"></div>
                 </div>
 
-                <!-- Action Buttons -->
                 <div class="flex flex-col items-center mb-10" data-aos="fade-up" data-aos-delay="600">
                     <div class="text-base font-bold text-brand-goldLight mb-6 tracking-[0.3em] font-sans uppercase">@lien_ibaraki</div>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
@@ -202,6 +198,7 @@
             <div class="absolute inset-0 bg-gradient-to-b from-brand-navy to-brand-navyDark opacity-50"></div>
             
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <!-- Stacked Concept Title -->
                 <div class="flex flex-col items-center justify-center mb-2 space-y-2" data-aos="fade-up">
                     <span class="font-oswald text-4xl sm:text-5xl font-black tracking-widest text-white">CONCEPT</span>
                     <span class="font-serif text-3xl sm:text-4xl text-brand-goldLight font-normal">&</span>
@@ -286,7 +283,6 @@
                 </div>
 
                 <div class="grid gap-8 text-center sm:text-left">
-                    <!-- Cards -->
                     <div class="bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-8 border-b-2 border-brand-gold/20 shadow-md" data-aos="fade-up">
                         <div class="w-16 h-16 bg-brand-navy text-brand-goldLight rounded-full flex items-center justify-center shrink-0 shadow-lg"><i data-lucide="users" class="w-8 h-8"></i></div>
                         <div>
@@ -339,14 +335,12 @@
                 </div>
 
                 <div class="bg-brand-navyDark border-2 border-brand-gold p-6 sm:p-12 shadow-2xl relative overflow-hidden font-sans rounded-sm" data-aos="fade-up">
-                    <!-- Success Overlay -->
                     <div id="form-success" class="hidden absolute inset-0 bg-brand-navyDark z-50 flex flex-col items-center justify-center text-center p-6 transition-all duration-300">
                         <div class="w-20 h-20 bg-brand-gold text-brand-navy flex items-center justify-center mb-6 rounded-full"><i data-lucide="check" class="w-10 h-10 stroke-[3]"></i></div>
                         <h3 class="text-2xl font-bold text-brand-goldLight mb-2">送信が完了しました</h3>
                         <p class="text-gray-300 mb-8 font-bold max-w-md">ご応募ありがとうございます。代表より、折り返しメールにてご連絡させていただきます。</p>
                         <button onclick="resetContactForm()" class="px-8 py-3 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-navy font-bold text-sm tracking-wider">戻る</button>
                     </div>
-                    <!-- Error Overlay -->
                     <div id="form-error" class="hidden absolute inset-0 bg-brand-navyDark z-50 flex flex-col items-center justify-center text-center p-6 transition-all duration-300">
                         <div class="w-20 h-20 bg-red-500/10 text-red-500 flex items-center justify-center mb-6 rounded-full"><i data-lucide="alert-circle" class="w-10 h-10"></i></div>
                         <h3 class="text-2xl font-bold text-red-500 mb-2">エラーが発生しました</h3>
@@ -394,43 +388,65 @@
     <!-- ========================================== -->
     <main id="view-team" class="page-view pt-20">
         
-        <!-- MEMBERS SECTION -->
-        <section class="py-24 bg-brand-cream border-b border-gray-200">
+        <!-- MEMBERS SECTION (PRO STYLE) -->
+        <section class="py-24 bg-brand-navyDark border-b border-brand-gold/20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="font-oswald text-4xl sm:text-5xl font-black text-brand-navy tracking-widest">MEMBERS</h2>
+                    <h2 class="font-oswald text-4xl sm:text-5xl font-black text-white tracking-widest">MEMBERS</h2>
                     <div class="w-16 h-1 bg-brand-gold mx-auto mt-4"></div>
-                    <p class="text-xs text-gray-500 font-bold tracking-[0.3em] uppercase mt-4">選手・スタッフ</p>
+                    <p class="text-xs text-brand-goldLight font-bold tracking-[0.3em] uppercase mt-4">選手・スタッフ</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto justify-center">
-                    <!-- 代表 -->
-                    <div class="bg-white border-t-4 border-brand-navy p-6 shadow-xl text-center relative" data-aos="fade-up">
-                        <div class="absolute top-4 right-4 bg-brand-navy text-brand-goldLight text-[10px] font-bold px-3 py-1 rounded-sm uppercase tracking-widest">代表</div>
-                        <div class="w-28 h-28 mx-auto relative p-1 rounded-full bg-gradient-to-r from-brand-gold to-brand-goldLight mb-6 shadow-md">
-                            <div class="w-full h-full bg-brand-cream rounded-full overflow-hidden flex items-center justify-center">
-                                <i data-lucide="user-check" class="w-12 h-12 text-brand-navy/60"></i>
+                <!-- プロ仕様：縦長カードのグリッドレイアウト（スマホ2列、PC3〜4列） -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                    
+                    <!-- 代表: 柳川瀬様 -->
+                    <div class="bg-brand-navy relative overflow-hidden group border border-brand-gold/20 hover:border-brand-gold transition-colors shadow-lg" data-aos="fade-up">
+                        <!-- 写真エリア (背景透過写真推奨) -->
+                        <div class="aspect-[3/4] bg-gradient-to-t from-brand-navyDark to-brand-navy relative flex items-end justify-center overflow-hidden">
+                            <!-- 背景の背番号透かし -->
+                            <div class="absolute top-2 right-2 text-6xl font-oswald font-black text-white/5 z-0 pointer-events-none transition-transform group-hover:scale-110">10</div>
+                            
+                            <!-- 写真（ない場合は代わりにアイコンが表示される） -->
+                            <img src="player_yanagawase.png" alt="柳川瀬" class="w-full h-full object-cover object-bottom relative z-10" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                            
+                            <i data-lucide="user" class="hidden w-1/2 h-1/2 text-brand-gold/30 mb-6 z-0"></i>
+                        </div>
+                        
+                        <!-- 情報エリア -->
+                        <div class="p-3 sm:p-5 border-t-[3px] border-brand-gold bg-brand-navy relative z-20">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <p class="text-[9px] sm:text-[10px] text-brand-gold font-bold tracking-widest uppercase mb-1">MF / 代表</p>
+                                    <h3 class="font-serif text-base sm:text-xl font-bold text-white leading-tight">柳川瀬</h3>
+                                    <p class="font-oswald text-[9px] sm:text-[10px] text-gray-400 tracking-widest uppercase mt-0.5">YANAGAWASE</p>
+                                </div>
+                                <div class="font-oswald text-3xl sm:text-4xl font-black text-brand-gold leading-none mt-1">10</div>
+                            </div>
+                            <!-- 一言メッセージ -->
+                            <div class="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/10">
+                                <p class="font-serif text-[10px] sm:text-xs text-gray-300 leading-relaxed">
+                                    「最高のチームをここ茨木で一緒に創り上げましょう！」
+                                </p>
                             </div>
                         </div>
-                        <div class="font-oswald text-2xl font-black text-brand-gold tracking-widest">#　</div>
-                        <h3 class="font-serif text-2xl font-black text-brand-navy mb-1">柳川瀬 敦</h3>
-                        <p class="text-xs text-gray-500 font-bold tracking-widest uppercase mb-4">MF / 19</p>
-                        <div class="w-8 h-[1px] bg-brand-gold/30 mx-auto mb-4"></div>
-                        <p class="font-serif text-sm text-gray-600 leading-relaxed italic">「サッカーを本気で楽しみたい方、最高のチームをここ茨木で一緒に創り上げましょう！」</p>
                     </div>
 
-                    <!-- Wanted Card -->
-                    <div class="bg-brand-navy border-2 border-dashed border-brand-gold/40 p-6 shadow-lg text-center relative flex flex-col justify-center items-center py-12" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-20 h-20 bg-brand-navyDark border border-brand-gold/30 rounded-full flex items-center justify-center mb-6">
-                            <i data-lucide="user-plus" class="w-8 h-8 text-brand-goldLight animate-pulse"></i>
+                    <!-- Wanted Card (募集プレースホルダー) -->
+                    <div class="bg-brand-navyDark border-2 border-dashed border-brand-gold/40 relative overflow-hidden group flex flex-col h-full shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <div class="aspect-[3/4] bg-brand-navy/30 relative flex items-center justify-center overflow-hidden flex-col p-4">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border border-brand-gold/50 flex items-center justify-center mb-4">
+                                <i data-lucide="user-plus" class="w-6 h-6 sm:w-8 sm:h-8 text-brand-goldLight animate-pulse"></i>
+                            </div>
+                            <h3 class="font-serif text-xs sm:text-sm font-bold text-white text-center leading-relaxed">初期メンバー<br>大募集中！</h3>
                         </div>
-                        <span class="text-xs text-brand-goldLight font-bold tracking-[0.3em] uppercase mb-2">INITIAL MEMBERS</span>
-                        <h3 class="font-serif text-xl font-bold text-white mb-4">初期メンバー大募集中！</h3>
-                        <p class="font-serif text-xs text-gray-300 leading-relaxed max-w-[200px] mx-auto mb-6">創設メンバーを募集中です。<br>あなたのプロフィールがここに並びます！</p>
-                        <button onclick="goToContact()" class="px-6 py-2 bg-gradient-to-r from-brand-gold to-brand-goldLight text-brand-navy text-xs font-black uppercase tracking-widest hover:brightness-110 transition-all shadow-md">
-                            エントリーする ➔
-                        </button>
+                        <div class="p-3 sm:p-5 border-t-[3px] border-brand-gold/40 bg-brand-navyDark flex-grow flex flex-col justify-end">
+                            <button onclick="goToContact()" class="w-full py-2 bg-brand-gold/20 text-brand-goldLight text-[9px] sm:text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-navy transition-colors text-center border border-brand-gold/30">
+                                エントリーする
+                            </button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -444,7 +460,6 @@
                     <p class="text-xs text-gray-500 font-bold tracking-[0.3em] uppercase mt-4">活動風景・ギャラリー</p>
                 </div>
 
-                <!-- Gallery Teaser -->
                 <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
                     <div class="bg-brand-navy border border-brand-gold/30 p-12 relative overflow-hidden flex flex-col items-center justify-center min-h-[300px] shadow-lg">
                         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c59b27_1px,transparent_1px)] [background-size:16px_16px]"></div>
